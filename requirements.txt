@@ -1,0 +1,5 @@
+# Backend dependencies live in backend/requirements.txt
+# Install with:
+#   pip install -r backend/requirements.txt
+#
+# Frontend: cd frontend && npm install

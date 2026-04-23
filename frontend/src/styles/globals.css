@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* App tokens (RGB so Tailwind alpha works) — blue / violet accent */
+    --bg: 15 23 42; /* #0F172A */
+    --surface: 30 41 59; /* #1E293B */
+    --muted: 148 163 184; /* slate-400 */
+    --border: 51 65 85; /* slate-700 */
+    --fg: 226 232 240; /* #E2E8F0 */
+    --accent: 129 140 248; /* indigo-400 */
+  }
+
+  /* Light mode (bonus toggle support) */
+  .light {
+    --bg: 248 250 252; /* slate-50 */
+    --surface: 255 255 255; /* white */
+    --muted: 71 85 105; /* slate-600 */
+    --border: 226 232 240; /* slate-200 */
+    --fg: 15 23 42; /* slate-900 */
+    --accent: 99 102 241; /* indigo-500 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background:
+      radial-gradient(1100px 520px at 10% -10%, rgba(99, 102, 241, 0.22), transparent 58%),
+      radial-gradient(900px 480px at 92% -8%, rgba(139, 92, 246, 0.18), transparent 55%),
+      radial-gradient(800px 420px at 50% 108%, rgba(59, 130, 246, 0.12), transparent 55%),
+      rgb(var(--bg));
+    color: rgb(var(--fg));
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(73, 118, 199, 0.5) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(73, 118, 199, 0.5);
+  border-radius: 999px;
+}
+
+.panel-surface {
+  background: color-mix(in srgb, rgb(var(--surface)) 55%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+@layer components {
+  .glass {
+    background: color-mix(in srgb, rgb(var(--surface)) 38%, transparent);
+    border: 1px solid rgb(var(--border) / 0.55);
+    backdrop-filter: blur(14px);
+  }
+
+  .container-pro {
+    @apply mx-auto w-full max-w-6xl px-4 md:px-8;
+  }
+}
