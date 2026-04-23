@@ -18,3 +18,4 @@ psycopg[binary]==3.2.3
 spacy==3.8.2
 bcrypt>=4.1.2
 PyJWT>=2.8.0
+uvicorn[standard]==0.24.0
