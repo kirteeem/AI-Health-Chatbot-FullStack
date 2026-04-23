@@ -116,3 +116,5 @@ database/*.db
 # =========================
 *.sublime-project
 *.sublime-workspace
+venv/
+__pycache__/
